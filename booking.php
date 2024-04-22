@@ -68,7 +68,7 @@ if(isset($_POST['add_to_cart'])) {
                 while($product = $result_products_category->fetch_assoc()) {
                     echo '<div class="product">';
                     echo '<span>' . $product["Product_id"] . " " . $product["Name"] . ' - $' . $product["Price"] . '</span>';
-                    echo '<form method="post"';
+                    echo '<form method="post">';
                     echo '<input type="hidden" name="product_id" value="' . $product["Product_id"] . '">';
                     echo '<input type="hidden" name="quantity" value="1">';
                     echo '<input type="submit" name="add_to_cart" value="Add to Cart">';
