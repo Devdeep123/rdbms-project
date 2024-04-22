@@ -1,0 +1,14 @@
+.message-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
