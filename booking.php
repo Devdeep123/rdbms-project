@@ -8,7 +8,6 @@ $servername = "localhost";
 $username = "root";
 $password = "Dmdgd24552423+";
 $dbname = "InventoryManagement";
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -68,8 +67,8 @@ if(isset($_POST['add_to_cart'])) {
             if ($result_products_category->num_rows > 0) {
                 while($product = $result_products_category->fetch_assoc()) {
                     echo '<div class="product">';
-                    echo '<span>' . $product["Name"] . ' - $' . $product["Price"] . '</span>';
-                    echo '<form method="post">';
+                    echo '<span>' . $product["Product_id"] . " " . $product["Name"] . ' - $' . $product["Price"] . '</span>';
+                    echo '<form method="post"';
                     echo '<input type="hidden" name="product_id" value="' . $product["Product_id"] . '">';
                     echo '<input type="hidden" name="quantity" value="1">';
                     echo '<input type="submit" name="add_to_cart" value="Add to Cart">';

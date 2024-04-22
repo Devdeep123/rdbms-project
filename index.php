@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "Dmdgd24552423+";
@@ -23,7 +24,8 @@ if(isset($_POST['login'])) {
         $row = $result->fetch_assoc();
         // Compare plain-text password with stored hash
         if ($password == $row['password']) {
-            // Password is correct, redirect to booking.php
+            // Password is correct, set customer_id in session
+            $_SESSION['customer_id'] = $row['Customer_ID'];
             header("Location: booking.php");
             exit(); // Ensure that code execution stops here
         } else {
@@ -38,6 +40,7 @@ if(isset($_POST['login'])) {
 
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html>
